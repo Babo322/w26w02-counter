@@ -1,21 +1,117 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
   text-align: center;
-  padding: 40px;
+  max-width: 400px;
+  width: 100%;
 }
 
-#count {
-  font-size: 48px;
-  margin: 20px 0;
+h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
 }
 
-button {
-  font-size: 18px;
-  margin: 5px;
-  padding: 10px 20px;
+.mode-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 2rem;
+}
+
+.mode-btn {
+  flex: 1;
+  padding: 8px 4px;
+  font-size: 0.85rem;
+  border: 1px solid #ddd;
+  background-color: #f8f9fa;
+  color: #555;
+  border-radius: 8px;
   cursor: pointer;
+  transition: all 0.2s ease;
 }
 
-button:hover {
-  background-color: #fd8a8a;
+.mode-btn:hover {
+  background-color: #e9ecef;
+}
+
+.mode-btn.active {
+  background-color: #ff6b6b;
+  color: white;
+  border-color: #ff6b6b;
+  font-weight: bold;
+}
+
+.timer-display {
+  font-size: 4.5rem;
+  font-weight: bold;
+  color: #2d3436;
+  margin: 1.5rem 0;
+  font-variant-numeric: tabular-nums; /* 숫자가 변할 때 너비가 흔들리지 않도록 고정 */
+}
+
+.control-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.ctrl-btn {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+#start-btn {
+  background-color: #4caf50;
+  color: white;
+}
+
+#start-btn:hover {
+  background-color: #45a049;
+}
+
+#pause-btn {
+  background-color: #ff9800;
+  color: white;
+}
+
+#pause-btn:hover:not(:disabled) {
+  background-color: #fb8c00;
+}
+
+#reset-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+#reset-btn:hover {
+  background-color: #e53935;
+}
+
+.ctrl-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.7;
 }
